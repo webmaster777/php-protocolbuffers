@@ -13,11 +13,7 @@ static inline int is_utf8(const char *s, int len)
 
 	for (i = 0; i < len; i++) {
 		/* ASCII */
-		if (bytes[0] == 0x09 ||
-				bytes[0] == 0x0A ||
-				bytes[0] == 0x0D ||
-				(bytes[0] >= 0x20 && bytes[0] <= 0x7E)
-		) {
+		if (bytes[0] <= 0x7F) {
 			bytes += 1;
 			continue;
 		}
