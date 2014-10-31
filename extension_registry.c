@@ -159,11 +159,7 @@ PHP_METHOD(protocolbuffers_extension_registry, add)
 	}
 
 	if (message_class_name[0] == '\\') {
-		int x;
-		for (x = 0; x < message_class_name_len-1; x++) {
-			message_class_name[x] = message_class_name[x+1];
-		}
-		message_class_name[message_class_name_len-1] = '\0';
+		message_class_name++;
 		message_class_name_len--;
 	}
 
