@@ -108,11 +108,7 @@ PHP_METHOD(protocolbuffers, decode)
 	}
 
 	if (klass[0] == '\\') {
-		int x;
-		for (x = 0; x < klass_len-1; x++) {
-			klass[x] = klass[x+1];
-		}
-		klass[klass_len-1] = '\0';
+		klass++;
 		klass_len--;
 	}
 
